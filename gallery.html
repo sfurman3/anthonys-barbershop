@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+<!-- Created by Seth Furman (2018-01-2018) -->
+
+<!-- TODO: ADD MORE COMMENTS -->
+<!-- TODO: Add support for Spanish (e.g. "Barbería", Español button, etc.) -->
+<!-- TODO: Write up a simple server for modifying the hours    , etc. -->
+
+<html lang="en">
+    <meta charset=utf-8>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Anthony's Barbershop in Langhorne">
+    <meta name="keywords" content="barber,barbershop,Langhorne">
+    <meta name="author" content="Seth Furman (furman.seth@gmail.com)">
+    
+    <link rel="stylesheet" href="assets/styles/main.css">
+    <link rel="stylesheet" href="assets/styles/barber-pole.css">
+    <link rel="stylesheet" href="assets/plugins/lightbox2/css/lightbox.css">
+    
+    <head>
+        <title>Anthony's Barbershop</title>
+    </head>
+    
+    <body>
+        <section class="container">
+            <div class="left-section">
+                <a href="home.html">
+                    <div src="assets/fonts/airstream/Airstream.ttf" class="logo-sidebar">
+                        Anthony's
+                        <img class="logo-image" src="assets/images/logo.png">
+                        Barber Shop
+                        <div class="logo-subtitle">Anthony Canamucio, Proprietor</div>
+                    </div>
+                </a>
+                
+<!--
+                <div class="open-sign">
+                    TODO: Add a simple open sign that shows "OPEN" or "CLOSED" depending on whether the store is open or closed.
+                </div>
+                
+-->
+                <h1 class=neon-sign>HAIR</h1>
+                
+                <!--Credit: https://codepen.io/yumeeeei/pen/QKqamX-->
+                <div id="barber-pole" class="flex-container">
+                    <div class="unit">
+                        <div class="pole-unit mono">
+                            <div class="pole-top">
+                                <div class="ball"></div> 
+                                <div class="cover"></div>
+                                <div class="band"></div>
+                                <div class="thin-band"></div>
+                            </div>
+                            <div class="pole-middle">
+                                <div class="pole-container">
+                                    <div class="pole"></div>
+                                </div>
+                            </div>
+                            <div class="pole-bottom">
+                                <div class="thin-band"></div>
+                                <div class="band"></div>
+                                <div class="cover"></div>
+                                <div class="ball"></div> 
+                            </div>
+                        </div>
+                        <div class="shadow"></div>
+                    </div>
+                </div>
+                
+                <div class="footer">
+                    <footer>
+                        <p>Anthony’s&nbsp;Barber&nbsp;Shop &copy;&nbsp;All&nbsp;Rights&nbsp;Reserved</p>
+                        <hr>
+                        <address>
+                            Middletown Shopping Center 145&nbsp;Woodbourne&nbsp;Rd, Langhorne,&nbsp;PA&nbsp;19047
+                        </address>
+                        <hr>
+                        <a href="https://www.google.com/maps/place/Anthony%E2%80%99s+Barber+Shop,+Anthony+Canamucio+Proprietor/@40.1758599,-74.885743,17z/data=!4m13!1m7!3m6!1s0x89c153db03134b7d:0x55d6bb0186294ce8!2s145+Woodbourne+Rd,+Langhorne,+PA+19047!3b1!8m2!3d40.1758599!4d-74.8835543!3m4!1s0x89c153db509870bb:0xc7b9d78bd68e123!8m2!3d40.1757099!4d-74.8835582">Map</a>
+                        <hr>
+                        <a href="tel:+1-215-946-7445">(215) 946-7445</a>
+                    </footer>
+                </div>
+            </div>
+            
+            <div id="right-section" class="right-section">
+                <h1 class=neon-sign>BARBER SHOP</h1>
+                <!-- Credit: https://www.w3schools.com/css/css_navbar.asp -->
+                <div id="main-nav" class="nav">
+                    <ul>
+                        <li id="btn_home" class="home">
+                            <a href="home.html">Home</a>
+                        </li>
+                        <li id="btn_about" class="about">
+                            <a href="about.html">About</a>
+                        </li>
+                        <li id="btn_contact" class="contact">
+                            <a href="contact.html">Contact</a>
+                        </li>
+                        <li id="btn_gallery" class="gallery">
+                            <a class="active" href="gallery.html">Gallery</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="article-container">
+                    <article id="content-gallery">
+                        <div class="subarticle" id="gallery-container">
+                            <!--
+                                Credit:
+                                    + image grid: https://www.w3schools.com/howto/howto_css_image_grid_responsive.asp
+                                    + lightbox: Lokesh Dhakar (http://www.lokeshdhakar.com)
+                            -->
+                            <div class="gallery-row">
+                                <div class="gallery-column">
+                                    <a href="assets/images/gallery/image-01.jpeg" data-lightbox="gallery">
+                                        <img src="assets/images/gallery/image-01.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-02.jpeg" data-lightbox="gallery">
+                                        <img src="assets/images/gallery/image-02.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-03.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-03.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-04.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-04.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-05.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-05.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-06.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-06.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-07.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-07.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-08.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-08.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-09.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-09.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-10.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-10.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-11.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-11.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-12.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-12.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-13.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-13.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-14.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-14.jpeg">
+                                    </a>
+                                </div>
+
+                                <div class="gallery-column">
+                                    <a href="assets/images/gallery/image-15.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-15.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-16.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-16.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-17.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-17.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-18.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-18.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-19.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-19.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-20.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-20.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-21.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-21.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-22.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-22.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-23.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-23.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-24.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-24.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-25.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-25.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-26.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-26.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-27.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-27.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-28.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-28.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-41.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-41.jpeg">
+                                    </a>
+                                </div>
+                                <div class="gallery-column">
+                                    <a href="assets/images/gallery/image-29.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-29.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-30.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-30.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-31.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-31.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-32.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-32.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-33.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-33.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-34.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-34.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-35.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-35.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-36.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-36.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-37.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-37.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-38.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-38.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-39.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-39.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-40.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-40.jpeg">
+                                    </a>
+                                    <a href="assets/images/gallery/image-42.jpeg" data-lightbox="gallery">
+                                       <img src="assets/images/gallery/image-42.jpeg">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </body>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/plugins/lightbox2/js/lightbox.js"></script>
+</html>

@@ -1,15 +1,9 @@
 // TODO: ADD MORE COMMENTS
-
 window.onload = function () {
     // hide holiday hours by default
     document.getElementById("holiday-hours").style.display = "none";
     
     mainNav = Array.from(document.getElementById("main-nav").getElementsByTagName("ul")[0].getElementsByTagName("li"));
-    
-    mainNav.filter(elt => elt.className != "home").forEach(function (otherBtn) {
-        otherBtn.getElementsByTagName("a")[0].removeAttribute("class");
-        document.getElementById("content-" + otherBtn.className).style.display = "none";
-    });
     
     mainNav.forEach(function (navBtn) {
         link = navBtn.getElementsByTagName("a")[0];
@@ -32,16 +26,14 @@ window.onload = function () {
         }
     });
     
-    // display section specified by id in url
-    try {
-        url = window.location.href;
-        var urlId = url.substring(url.lastIndexOf('#') + 1);
-        var contentId = urlId.substring(urlId.lastIndexOf('-') + 1);
-        $("#btn_" + contentId).find("a").click();
-    } catch (err) {
-        ;
-    }
-    
     // TODO: load hours data
-    $("#hours-table").find("table").append("<tr><td>TUE</td><td>9:00</td><td>TO</td> <td>7:00</td></tr>");
+    
+    // TODO: refactor into function addRowToTable or similar...
+//    var tableId = "hours-table";
+//    var day = "TUE";
+//    var startTime = "9:00";
+//    var endTime = "7:00";
+//    $("#" + tableId).find("table").append(
+//        "<tr><td>" + day + "</td><td>" + startTime + "</td><td>TO</td><td>" + endTime + "</td></tr>"
+//    );
 }

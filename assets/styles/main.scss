@@ -252,39 +252,95 @@ a:hover {
 }
 
 #content-contact {
-    #embedded-map {
-        
-    }
-    
-    iframe {
+    .embed-google-map {
         display: block;
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 1em;
         width: 80%;
+        height: 50vw;
+    }
+    
+    h3 {
+        font-size: 3.5vw;
+    }
+    
+    .embed-facebook {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1em;
+        width: inherit;
         
-        // NOTE: This doesn't work
-//        border: 10px solid white;
+        iframe {
+            border: none;
+            overflow: hidden;
+            display: block;
+            margin: auto;
+        }
+        
+        @media screen and (max-width: 600px) {
+            iframe {
+                -moz-transform: scale(0.50); 
+                -webkit-transform: scale(0.50); 
+                -o-transform: scale(0.50);
+                -ms-transform: scale(0.50);
+                transform: scale(0.50); 
+                -moz-transform-origin: center left;
+                -webkit-transform-origin: center left;
+                -o-transform-origin: center left;
+                -ms-transform-origin: center left;
+                transform-origin: center left;
+                margin-left: 10%;
+            }
+        }
     }
     
     img {
         display: block;
         margin-left: auto;
         margin-right: auto;
-        width: 50%;
+        width: 30%;
+    }
+}
+
+.lightbox {
+    font-family: monospace, sans-serif;
+    font-weight: 100;
+ }
+
+.gallery-row {
+  display: flex;
+  flex-wrap: wrap;
+//  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.gallery-column {
+    flex: 25.5%;
+    max-width: 25.5%;
+    padding: 0 3%;
+    
+    img {
+        margin-top: 8px;
+        vertical-align: middle;
     }
 }
 
 #content-gallery {
     #gallery-container {
-         padding-top: 4%;
+        padding-top: 2%;
+        padding-bottom: 4%;
+        margin: 4% auto 0% auto;
     }
     
     img {
-        border: 5px solid #fff;
-        width: 80%;
+        border: 3px solid #fff;
+        width: 100%;
         display: block;
-        margin: auto;
+        margin: 10% 5% 5% 10%;
+//        display: inline-table;
+//        margin: auto;
     }
 }
 
