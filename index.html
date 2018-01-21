@@ -1,0 +1,278 @@
+<!DOCTYPE HTML>
+<!-- Created by Seth Furman (2018-01-2018) -->
+
+<!-- TODO: ADD MORE COMMENTS -->
+<!-- TODO: Add support for Spanish (e.g. "Barbería", Español button, etc.) -->
+<!-- TODO: Write up a simple server for modifying the hours    , etc. -->
+
+<html lang="en">
+    <meta charset=utf-8>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="assets">
+    <link rel="stylesheet" href="assets/styles/main.css">
+    <link rel="stylesheet" href="assets/styles/barber-pole.css">
+    <head>
+        <title>Anthony's Barbershop</title>
+    </head>
+
+    <body>
+        <section class="container">
+            <div class="left-section">
+                <a href="index.html">
+                    <div src="assets/fonts/airstream/Airstream.ttf" class="logo-sidebar">
+                        Anthony's
+                        <img class="logo-image" src="assets/images/logo.png">
+                        Barber Shop
+                        <div class="logo-subtitle">Anthony Canamucio, Proprietor</div>
+                    </div>
+                </a>
+                
+<!--
+                <div class="open-sign">
+                    TODO: Add a simple open sign that shows "OPEN" or "CLOSED" depending on whether the store is open or closed.
+                </div>
+                
+-->
+                <h1 class=neon-sign>HAIR</h1>
+                
+                <!--Credit: https://codepen.io/yumeeeei/pen/QKqamX-->
+                <div id="barber-pole" class="flex-container">
+                    <div class="unit">
+                        <div class="pole-unit mono">
+                            <div class="pole-top">
+                                <div class="ball"></div> 
+                                <div class="cover"></div>
+                                <div class="band"></div>
+                                <div class="thin-band"></div>
+                            </div>
+                            <div class="pole-middle">
+                                <div class="pole-container">
+                                    <div class="pole"></div>
+                                </div>
+                            </div>
+                            <div class="pole-bottom">
+                                <div class="thin-band"></div>
+                                <div class="band"></div>
+                                <div class="cover"></div>
+                                <div class="ball"></div> 
+                            </div>
+                        </div>
+                        <div class="shadow"></div>
+                    </div>
+                </div>
+                
+                <div class="footer">
+                    <footer>
+                        <p>Anthony’s&nbsp;Barber&nbsp;Shop &copy;&nbsp;All&nbsp;Rights&nbsp;Reserved</p>
+                        <hr>
+                        <address>
+                            Middletown Shopping Center 145&nbsp;Woodbourne&nbsp;Rd, Langhorne,&nbsp;PA&nbsp;19047
+                        </address>
+                        <hr>
+                        <a href="https://www.google.com/maps/place/Anthony%E2%80%99s+Barber+Shop,+Anthony+Canamucio+Proprietor/@40.1758599,-74.885743,17z/data=!4m13!1m7!3m6!1s0x89c153db03134b7d:0x55d6bb0186294ce8!2s145+Woodbourne+Rd,+Langhorne,+PA+19047!3b1!8m2!3d40.1758599!4d-74.8835543!3m4!1s0x89c153db509870bb:0xc7b9d78bd68e123!8m2!3d40.1757099!4d-74.8835582">Map</a>
+                        <hr>
+                        <a href="tel:+1-215-946-7445">(215) 946-7445</a>
+                    </footer>
+                </div>
+            </div>
+            
+            <div id="right-section" class="right-section">
+                <h1 class=neon-sign>BARBER SHOP</h1>
+                <!-- Credit: https://www.w3schools.com/css/css_navbar.asp -->
+                <div id="main-nav" class="nav">
+                    <ul>
+                        <li id="btn_home" class="home">
+                            <a class="active" href="index.html#content-home">Home</a>
+                        </li>
+                        <li id="btn_about" class="about">
+                            <a id="about-anchor" href="index.html#content-about">About</a>
+                        </li>
+                        <li id="btn_contact" class="contact">
+                            <a href="index.html#content-contact">Contact</a>
+                        </li>
+                        <li id="btn_gallery" class="gallery">
+                            <a href="index.html#content-gallery">Gallery</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="article-container">
+                    <article id="content-home">
+                        <div class="subarticle">
+                            <h2>What we do</h2>
+                            <img src="assets/images/boy-haircut.jpeg">
+                            <p>We deliver expert haircuts to men and boys and offer old fashioned, steamed towel, hot lather shaves.</p>
+                        </div>
+                        
+                        <div class="subarticle">
+                            <h2>How we do it</h2>
+                            <img src="assets/images/counter-tools.jpeg">
+                            <p>As important as the quality of our  haircuts is close attention to customer service and making you feel at home.</p>
+                        </div>
+                        
+                        <div class="subarticle">
+                            <h2>When we do it</h2>
+                            <div align="center" id="hours-table" class="hours-table">
+                                <div class="marquee-title">BUSINESS HOURS</div>
+                                <img src="assets/images/marquee-sign.png" style="width: 95%">
+                                <table class="marquee-table" style="width: 95%">
+                                    <tr>
+                                        <td>TUE</td>
+                                        <td>9:00</td> 
+                                        <td>TO</td>
+                                        <td>7:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>WED</td>
+                                        <td>9:00</td> 
+                                        <td>TO</td>
+                                        <td>7:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>THU</td>
+                                        <td>9:00</td> 
+                                        <td>TO</td>
+                                        <td>7:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>FRI</td>
+                                        <td>9:00</td> 
+                                        <td>TO</td>
+                                        <td>7:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SAT</td>
+                                        <td>8:00</td> 
+                                        <td>TO</td>
+                                        <td>4:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SUN</td>
+                                        <td></td> 
+                                        <td></td>
+                                        <td>CLOSED</td>
+                                    </tr>
+                                    <tr>
+                                        <td>MON</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>CLOSED</td> 
+                                    </tr>
+                                </table> 
+                            </div>
+                        </div>
+                        
+                        <div id="holiday-hours" class="subarticle">
+                            <h2>Holiday Hours</h2>
+                            <div align="center" id="hours-table" class="hours-table">
+                                <div class="marquee-title">CHRISTMAS / NEW YEARS HOURS</div>
+                                <img src="assets/images/marquee-sign.png" style="width: 95%">
+                                <table class="marquee-table" style="width: 95%">
+                                    <tr>
+                                        <td>MON</td>
+                                        <td>(12/25)</td> 
+                                        <td></td>
+                                        <td>CLOSED</td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;&nbsp;&mdash;</td>
+                                        <td></td> 
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>WED</td>
+                                        <td>(12/27)</td> 
+                                        <td></td>
+                                        <td>CLOSED</td>
+                                    </tr>
+                                </table> 
+                            </div>
+                            
+                            <div align="center" id="hours-table" class="hours-table">
+                                <div class="marquee-title">EASTER HOURS</div>
+                                <img src="assets/images/marquee-sign.png" style="width: 95%">
+                                <table class="marquee-table" style="width: 95%">
+                                    <tr>
+                                        <td>SUN</td>
+                                        <td>(4/1)</td> 
+                                        <td></td>
+                                        <td>CLOSED</td>
+                                    </tr>
+                                    <tr>
+                                        <td>MON</td>
+                                        <td>(4/2)</td> 
+                                        <td></td>
+                                        <td>CLOSED</td>
+                                    </tr>
+                                </table> 
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article id="content-about">
+                        <div class="subarticle">
+                            <h2>About Our Shop</h2>
+                            <img src="assets/images/counter-tools-2.jpeg">
+                            <p>
+                                Classic and modern haircuts for boys and men along with hot towel, straight razor shaves. A traditional barber shop that has been here for almost 50 years. Freshly renovated with old school charm that reflects the history of the community. Come for a trim and relax to the sounds of Louis Prima, Jerry Vale, Billie Holiday, Dinah Washington, Dean Martin and others, while enjoying a refreshment from our vintage 1950's Philco refrigerator. All for the same price as the unisex chains. 
+                            </p>
+                            <p>
+                                We have been a barber shop since the mid 1960s, when the Langhorne Speedway was on the other side of Woodbourne Rd. The current owner is the third generation of his family to practice the Tonsorial Arts, and has recently taken the baton from the shop's previous owner, who has been here for 25 years.
+                            </p>
+                        </div>
+                        <div class="subarticle">
+                            <h2>What We Offer</h2>
+                            
+                            <h3>Haircut &amp; Style</h3>
+                            <p>
+                                Every haircut is executed with precision and style, and always finished with a hot lather neck shave. A commercial and fine artist before becoming a barber, Anthony finds that giving a fresh haircut is much like executing a painting or sculpture, and treats each one as such.
+                            </p>
+                            
+                            <h3>Classic Shaves</h3>
+                            <p>
+                                We apply a hot towel and pre-shave cream to ensure you get the closest and most comfortable shave possible.
+                            </p>
+                            <p>
+                                We pride ourselves on using razors passed down to us from barbers of long ago. Chances are your face will be shaved with a 90 year old, freshly honed straight razor once used by the late Nick Seruby (a Trenton New Jersey barber) but not before it gets the finishing touch on a 100 year-old strop that was used by Anthony’s grandfather and great-grandfather. At the end of the shave, a quick shoulder massage with his grandfather’s Oster Stim-u-lax massager from the 1950’s and you will be relaxed and ready for the rest of 
+the day.
+                            </p>
+                        </div>
+                    </article>
+                    
+                    <article id="content-contact">
+                        <div class="subarticle">
+                            <h2>Our Address</h2>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.498876074107!2d-74.88574688461141!3d40.17570987939386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c153db509870bb%3A0xc7b9d78bd68e123!2sAnthony%E2%80%99s+Barber+Shop%2C+Anthony+Canamucio+Proprietor!5e0!3m2!1sen!2sus!4v1516426421654" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            <h3>Anthony’s&nbsp;Barber&nbsp;Shop</h3>
+                            <p>
+                                Middletown Shopping Center 145<br>Woodbourne&nbsp;Rd.<br> Langhorne,&nbsp;PA&nbsp;19047
+                            </p>
+                            <p>
+                                Phone: <a href="tel:+1-215-946-7445">(215) 946-7445</a><br>
+                                E-mail: <a href="mailto:acanamucio@yahoo.com">acanamucio@yahoo.com</a>
+                            </p>
+                            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Flanghornebarber%2F&tabs&width=340&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="340" height="70" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                        </div>
+                        
+<!--
+                        <div class="subarticle">
+                            <h2>Send A Message</h2>
+                        </div>
+-->
+                        <img src="assets/images/logo-neon.png">
+                    </article>
+                    
+                    <article id="content-gallery">
+                        <div id="gallery-container">
+                            <img src="assets/images/gallery/1f290985d9009dde6913463410be4274.jpg">
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </body>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/scripts/main.js"></script>
+</html>
