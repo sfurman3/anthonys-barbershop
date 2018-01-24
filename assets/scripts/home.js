@@ -1,16 +1,172 @@
-// TODO: ADD MORE COMMENTS
-window.onload = function () {
-    // hide holiday hours by default
-    document.getElementById("holiday-hours").style.display = "none";
-    
-    // TODO: load hours data
-    
-    // TODO: refactor into function addRowToTable or similar...
-//    var tableId = "hours-table";
-//    var day = "TUE";
-//    var startTime = "9:00";
-//    var endTime = "7:00";
-//    $("#" + tableId).find("table").append(
-//        "<tr><td>" + day + "</td><td>" + startTime + "</td><td>TO</td><td>" + endTime + "</td></tr>"
-//    );
-}
+(function () {
+    const apiBaseUrl = "http://0.0.0.0:8080";
+    const weekdays = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
+
+    // TODO: ADD MORE COMMENTS
+
+    function tableName(name) {
+        return name + "-hours";
+    }
+
+    function timeStringOfHoursAndMinutes(hours, minutes) {
+            if (hours > 12) {
+                hours = (hours - 12).toString();
+            }
+
+            var minutes = minutes.toString();
+            if (minutes.length == 1) {
+                minutes = "0" + minutes;
+            }
+
+            return hours + ":" + minutes;
+    }
+
+    function tableRowOfGenericHours(hours) {
+        var tableRow = $(document.createElement("tr"));
+        var weekdayCell = $(document.createElement("td"));
+        var startTimeCell = $(document.createElement("td"));
+        var toCell = $(document.createElement("td"));
+        var endTimeCell = $(document.createElement("td"));
+
+        weekdayCell.text(weekdays[hours.weekday]);
+        if (!hours.is_closed) {
+            toCell.text("TO");
+            startTimeCell.text(timeStringOfHoursAndMinutes(
+                    hours.start_time.hours, hours.start_time.minutes));
+            endTimeCell.text(timeStringOfHoursAndMinutes(
+                    hours.end_time.hours, hours.end_time.minutes));
+        } else {
+            endTimeCell.text("CLOSED");
+        }
+
+        tableRow.append(weekdayCell, startTimeCell, toCell, endTimeCell);
+        return tableRow;
+    }
+
+    function weekdayDateStringOfDate(date) {
+        var weekday = weekdays[date.getDay()];
+        var month = (date.getMonth() + 1).toString();
+        var day = (date.getDate()).toString();
+
+        return weekday + " (" + month + "/" + day + ")";
+    }
+
+    function closedTableRowOfStartTimeAndEndTime(start_time, end_time) {
+        var tableRow = $(document.createElement("tr"));
+        var weekdayCell = $(document.createElement("td"));
+        var startTimeCell = $(document.createElement("td"));
+        var toCell = $(document.createElement("td"));
+        var endTimeCell = $(document.createElement("td"));
+
+        weekdayCell.text(weekdayDateStringOfDate(start_time));
+        endTimeCell.text("CLOSED");
+        tableRow.append(weekdayCell, startTimeCell, toCell, endTimeCell);
+
+        return tableRow;
+    }
+
+    function regularTableRowOfStartTimeAndEndTime(start_time, end_time) {
+        var tableRow = $(document.createElement("tr"));
+        var weekdayCell = $(document.createElement("td"));
+        var startTimeCell = $(document.createElement("td"));
+        var toCell = $(document.createElement("td"));
+        var endTimeCell = $(document.createElement("td"));
+
+        weekdayCell.text(weekdayDateStringOfDate(start_time));
+        toCell.text("TO");
+        startTimeCell.text(timeStringOfHoursAndMinutes(
+                start_time.getHours(), start_time.getMinutes()));
+        endTimeCell.text(timeStringOfHoursAndMinutes(
+                end_time.getHours(), end_time.getMinutes()));
+        tableRow.append(weekdayCell, startTimeCell, toCell, endTimeCell);
+
+        return tableRow;
+    }
+
+    function tableRowsOfSpecificHours(hours) {
+        var newTableRows = [];
+
+        var start_time = new Date(hours.start_time);
+        var end_time = new Date(hours.end_time);
+
+        if (hours.is_closed) {
+            while (start_time <= end_time) {
+                newTableRows.push(
+                    closedTableRowOfStartTimeAndEndTime(start_time, end_time));
+                start_time.setDate(start_time.getDate() + 1);
+            }
+        } else {
+            while (start_time <= end_time) {
+                newTableRows.push(
+                    regularTableRowOfStartTimeAndEndTime(start_time, end_time));
+                start_time.setDate(start_time.getDate() + 1);
+            }
+        }
+
+        return newTableRows;
+    }
+
+    function hoursTableOfJSON(name, json) {
+        var newTableDiv = $(document.createElement("div"));
+        newTableDiv.attr("align", "center");
+        newTableDiv.attr("id", tableName(name));
+        newTableDiv.attr("class", "hours-table");
+
+        var newTableTitle = $(document.createElement("div"));
+        newTableTitle.attr("class", "marquee-title");
+        newTableTitle.text(json.title.toUpperCase());
+
+        var newTableBackground = $(document.createElement("img"));
+        newTableBackground.attr("src", "assets/images/marquee-sign.png");
+        newTableBackground.attr("style", "width: 95%");
+
+        var newTable = $(document.createElement("table"));
+        newTable.attr("class", "marquee-table");
+        newTable.attr("style", "width: 95%");
+
+        // populate table with any generic hours
+        $.each(json.generic_hours, function (i, hours) {
+            newTable.append(tableRowOfGenericHours(hours));
+        });
+
+        // populate table with any specific hours
+        $.each(json.specific_hours, function (i, hours) {
+            $(tableRowsOfSpecificHours(hours)).each(function(i, newRow) {
+                newTable.append(newRow);
+            });
+        });
+
+        newTableDiv.append(newTableTitle, newTableBackground, newTable);
+        return newTableDiv;
+    }
+
+    function populateHoursByName(i, name) {
+        var httpRequest = new XMLHttpRequest();
+        httpRequest.onreadystatechange = function() {
+            if (httpRequest.readyState === XMLHttpRequest.DONE) {
+                if (httpRequest.status === 200) {
+                    resp = JSON.parse(httpRequest.responseText);
+                    $("#hours-tables").append(hoursTableOfJSON(name, resp));
+                }
+            }
+        };
+        httpRequest.open('GET', apiBaseUrl + '/hours/findByName/' + name, true);
+        httpRequest.send();
+    }
+
+    window.onload = function () {
+        // load hours data from the server
+        httpRequest = new XMLHttpRequest();
+        httpRequest.onreadystatechange = function() {
+            if (httpRequest.readyState === XMLHttpRequest.DONE) {
+                if (httpRequest.status === 200) {
+                    resp = JSON.parse(httpRequest.responseText);
+                    $("#" + tableName("regular")).first().remove();
+                    $.each(resp.hours_names, populateHoursByName);
+                }
+            }
+        };
+        httpRequest.open('GET', apiBaseUrl + '/hours/findActive', true);
+        httpRequest.send();
+    }
+})();

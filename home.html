@@ -11,10 +11,10 @@
     <meta name="description" content="Anthony's Barbershop in Langhorne">
     <meta name="keywords" content="barber,barbershop,Langhorne">
     <meta name="author" content="Seth Furman (furman.seth@gmail.com)">
-    
+
     <link rel="stylesheet" href="assets/styles/main.css">
     <link rel="stylesheet" href="assets/styles/barber-pole.css">
-    
+
     <head>
         <title>Anthony's Barbershop</title>
     </head>
@@ -30,21 +30,21 @@
                         <div class="logo-subtitle">Anthony Canamucio, Proprietor</div>
                     </div>
                 </a>
-                
+
 <!--
                 <div class="open-sign">
                     TODO: Add a simple open sign that shows "OPEN" or "CLOSED" depending on whether the store is open or closed.
                 </div>
-                
+
 -->
                 <h1 class=neon-sign>HAIR</h1>
-                
+
                 <!--Credit: https://codepen.io/yumeeeei/pen/QKqamX-->
                 <div id="barber-pole" class="flex-container">
                     <div class="unit">
                         <div class="pole-unit mono">
                             <div class="pole-top">
-                                <div class="ball"></div> 
+                                <div class="ball"></div>
                                 <div class="cover"></div>
                                 <div class="band"></div>
                                 <div class="thin-band"></div>
@@ -58,13 +58,13 @@
                                 <div class="thin-band"></div>
                                 <div class="band"></div>
                                 <div class="cover"></div>
-                                <div class="ball"></div> 
+                                <div class="ball"></div>
                             </div>
                         </div>
                         <div class="shadow"></div>
                     </div>
                 </div>
-                
+
                 <div class="footer">
                     <footer>
                         <p>Anthony’s&nbsp;Barber&nbsp;Shop &copy;&nbsp;All&nbsp;Rights&nbsp;Reserved</p>
@@ -79,7 +79,7 @@
                     </footer>
                 </div>
             </div>
-            
+
             <div id="right-section" class="right-section">
                 <h1 class=neon-sign>BARBER SHOP</h1>
                 <!-- Credit: https://www.w3schools.com/css/css_navbar.asp -->
@@ -99,7 +99,7 @@
                         </li>
                     </ul>
                 </div>
-                
+
                 <div class="article-container">
                     <article id="content-home">
                         <div class="subarticle">
@@ -107,52 +107,52 @@
                             <img src="assets/images/boy-haircut.jpeg">
                             <p>We deliver expert haircuts to men and boys and offer old fashioned, steamed towel, hot lather shaves.</p>
                         </div>
-                        
+
                         <div class="subarticle">
                             <h2>How we do it</h2>
                             <img src="assets/images/counter-tools.jpeg">
                             <p>As important as the quality of our  haircuts is close attention to customer service and making you feel at home.</p>
                         </div>
-                        
-                        <div class="subarticle">
+
+                        <div id="hours-tables" class="subarticle">
                             <h2>When we do it</h2>
-                            <div align="center" id="hours-table" class="hours-table">
+                            <div align="center" id="regular-hours" class="hours-table">
                                 <div class="marquee-title">BUSINESS HOURS</div>
                                 <img src="assets/images/marquee-sign.png" style="width: 95%">
                                 <table class="marquee-table" style="width: 95%">
                                     <tr>
                                         <td>TUE</td>
-                                        <td>9:00</td> 
+                                        <td>9:00</td>
                                         <td>TO</td>
                                         <td>7:00</td>
                                     </tr>
                                     <tr>
                                         <td>WED</td>
-                                        <td>9:00</td> 
+                                        <td>9:00</td>
                                         <td>TO</td>
                                         <td>7:00</td>
                                     </tr>
                                     <tr>
                                         <td>THU</td>
-                                        <td>9:00</td> 
+                                        <td>9:00</td>
                                         <td>TO</td>
                                         <td>7:00</td>
                                     </tr>
                                     <tr>
                                         <td>FRI</td>
-                                        <td>9:00</td> 
+                                        <td>9:00</td>
                                         <td>TO</td>
                                         <td>7:00</td>
                                     </tr>
                                     <tr>
                                         <td>SAT</td>
-                                        <td>8:00</td> 
+                                        <td>8:00</td>
                                         <td>TO</td>
                                         <td>4:00</td>
                                     </tr>
                                     <tr>
                                         <td>SUN</td>
-                                        <td></td> 
+                                        <td></td>
                                         <td></td>
                                         <td>CLOSED</td>
                                     </tr>
@@ -160,13 +160,14 @@
                                         <td>MON</td>
                                         <td></td>
                                         <td></td>
-                                        <td>CLOSED</td> 
+                                        <td>CLOSED</td>
                                     </tr>
-                                </table> 
+                                </table>
                             </div>
                         </div>
-                        
-                        <div id="holiday-hours" class="subarticle">
+
+                        <!-- TODO: REMOVE -->
+                        <!-- <div id="holiday-hours" class="subarticle">
                             <h2>Holiday Hours</h2>
                             <div align="center" id="hours-table" class="hours-table">
                                 <div class="marquee-title">CHRISTMAS / NEW YEARS HOURS</div>
@@ -174,50 +175,50 @@
                                 <table class="marquee-table" style="width: 95%">
                                     <tr>
                                         <td>MON</td>
-                                        <td>(12/25)</td> 
+                                        <td>(12/25)</td>
                                         <td></td>
                                         <td>CLOSED</td>
                                     </tr>
                                     <tr>
                                         <td>&nbsp;&nbsp;&mdash;</td>
-                                        <td></td> 
+                                        <td></td>
                                         <td></td>
                                         <td></td>
                                     </tr>
                                     <tr>
                                         <td>WED</td>
-                                        <td>(12/27)</td> 
+                                        <td>(12/27)</td>
                                         <td></td>
                                         <td>CLOSED</td>
                                     </tr>
-                                </table> 
-                            </div>
-                            
+                                </table> -->
+                            <!-- </div>
+
                             <div align="center" id="hours-table" class="hours-table">
                                 <div class="marquee-title">EASTER HOURS</div>
                                 <img src="assets/images/marquee-sign.png" style="width: 95%">
                                 <table class="marquee-table" style="width: 95%">
                                     <tr>
                                         <td>SUN</td>
-                                        <td>(4/1)</td> 
+                                        <td>(4/1)</td>
                                         <td></td>
                                         <td>CLOSED</td>
                                     </tr>
                                     <tr>
                                         <td>MON</td>
-                                        <td>(4/2)</td> 
+                                        <td>(4/2)</td>
                                         <td></td>
                                         <td>CLOSED</td>
                                     </tr>
-                                </table> 
+                                </table>
                             </div>
-                        </div>
+                        </div> -->
                     </article>
                 </div>
             </div>
         </section>
     </body>
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/scripts/home.js"></script>
 </html>
