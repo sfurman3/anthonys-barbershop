@@ -3,3 +3,6 @@
 
 # OS X files
 .DS_Store
+
+# Ternjs config
+.tern-project
