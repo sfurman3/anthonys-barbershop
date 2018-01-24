@@ -2,8 +2,6 @@
     const apiBaseUrl = "http://0.0.0.0:8080";
     const weekdays = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
 
-    // TODO: ADD MORE COMMENTS
-
     function tableName(name) {
         return name + "-hours";
     }
@@ -13,9 +11,9 @@
                 hours = (hours - 12).toString();
             }
 
-            var minutes = minutes.toString();
-            if (minutes.length == 1) {
-                minutes = "0" + minutes;
+            var minutesString = minutes.toString();
+            if (minutesString.length == 1) {
+                minutesString = "0" + minutesString;
             }
 
             return hours + ":" + minutes;
@@ -51,7 +49,7 @@
         return weekday + " (" + month + "/" + day + ")";
     }
 
-    function closedTableRowOfStartTimeAndEndTime(start_time, end_time) {
+    function closedTableRowOfDate(start_time) {
         var tableRow = $(document.createElement("tr"));
         var weekdayCell = $(document.createElement("td"));
         var startTimeCell = $(document.createElement("td"));
@@ -92,7 +90,7 @@
         if (hours.is_closed) {
             while (start_time <= end_time) {
                 newTableRows.push(
-                    closedTableRowOfStartTimeAndEndTime(start_time, end_time));
+                    closedTableRowOfDate(start_time));
                 start_time.setDate(start_time.getDate() + 1);
             }
         } else {
@@ -145,7 +143,7 @@
         httpRequest.onreadystatechange = function() {
             if (httpRequest.readyState === XMLHttpRequest.DONE) {
                 if (httpRequest.status === 200) {
-                    resp = JSON.parse(httpRequest.responseText);
+                    var resp = JSON.parse(httpRequest.responseText);
                     $("#hours-tables").append(hoursTableOfJSON(name, resp));
                 }
             }
@@ -156,11 +154,11 @@
 
     window.onload = function () {
         // load hours data from the server
-        httpRequest = new XMLHttpRequest();
+        var httpRequest = new XMLHttpRequest();
         httpRequest.onreadystatechange = function() {
             if (httpRequest.readyState === XMLHttpRequest.DONE) {
                 if (httpRequest.status === 200) {
-                    resp = JSON.parse(httpRequest.responseText);
+                    var resp = JSON.parse(httpRequest.responseText);
                     $("#" + tableName("regular")).first().remove();
                     $.each(resp.hours_names, populateHoursByName);
                 }
