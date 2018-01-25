@@ -147,7 +147,7 @@ a:hover {
           .right-section .article-container article .subarticle .hours-table .marquee-title {
             width: 88%;
             font-family: sans-serif;
-            font-size: 4vw;
+            font-size: 3.5vw;
             position: absolute;
             top: 15%;
             left: 50%;
@@ -157,7 +157,7 @@ a:hover {
             width: 100%;
             padding-right: 7%;
             font-family: sans-serif;
-            font-size: 3.5vw;
+            font-size: 3.0vw;
             position: absolute;
             top: 55%;
             left: 56%;
