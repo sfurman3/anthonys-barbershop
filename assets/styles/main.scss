@@ -103,7 +103,7 @@ body {
         font-size: 5vw;
         text-align: center;
         color: #c65d5d;
-        text-shadow: 0.03em 0.03em white;
+        text-shadow: 0.03em 0.03em #fff;
 
         .logo-subtitle {
             font-size: 3vw;
@@ -111,7 +111,7 @@ body {
             font-family: QwiglyRegular;
             font-weight: normal;
             color: #c65d5d;
-            text-shadow: 0.03em 0.03em white;
+            text-shadow: 0.03em 0.03em #fff;
         }
 
         .logo-image {
@@ -124,11 +124,11 @@ body {
         text-align: center;
         font-family: sans-serif;
         font-size: 1.5vw;
-        color: white;
+        color: #fff;
         background-color: black;
         background-color: #777;
         border-radius: 7px;
-        border: 3px solid white;
+        border: 3px solid #fff;
         padding: 0 1.5vw 1.5vw 1.5vw;
 
         a {
@@ -162,7 +162,7 @@ a:hover {
     .article-container {
         background-color: #777;
         border-radius: 10px;
-        border: 3px solid white;
+        border: 3px solid #fff;
 
         article {
             font-family: LiberationSans, sans-serif;
@@ -171,7 +171,7 @@ a:hover {
             padding: 0em 0.5em 0.9em 0.5em;
             vertical-align: middle;
             margin: 0 2% 2% 2%;
-            color: white;
+            color: #fff;
 
             .subarticle {
                 padding-left: 0.5em;
@@ -203,7 +203,7 @@ a:hover {
 
                 img {
                     border-style: solid;
-                    border-color: white;
+                    border-color: #fff;
                     display: block;
                     margin-left: auto;
                     margin-right: auto;
@@ -216,7 +216,7 @@ a:hover {
                 .hours-table {
                     position: relative;
                     text-align: center;
-                    color: white;
+                    color: #fff;
 
                     .marquee-title {
                         width: 88%;
@@ -352,7 +352,7 @@ a:hover {
     text-align: center;
     padding: 0;
     margin: 0;
-    border: 3px solid white;
+    border: 3px solid #fff;
 }
 
 .nav li {
@@ -376,14 +376,14 @@ a:hover {
 
 .nav a.active {
   background-color: #a84f4f;
-  color: white;
+  color: #fff;
   cursor: default;
 }
 
 //@media screen and (min-width: 600px) {
     .nav ul {
         border-radius: 10px;
-        border: 3px solid white;
+        border: 3px solid #fff;
     }
 
   .nav li {

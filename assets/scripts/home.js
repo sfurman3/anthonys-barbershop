@@ -16,7 +16,7 @@
                 minutesString = "0" + minutesString;
             }
 
-            return hours + ":" + minutes;
+            return hours + ":" + minutesString;
     }
 
     function tableRowOfGenericHours(hours) {

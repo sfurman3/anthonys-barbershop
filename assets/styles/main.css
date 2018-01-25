@@ -57,25 +57,25 @@ body {
     font-size: 5vw;
     text-align: center;
     color: #c65d5d;
-    text-shadow: 0.03em 0.03em white; }
+    text-shadow: 0.03em 0.03em #fff; }
     .left-section .logo-sidebar .logo-subtitle {
       font-size: 3vw;
       text-align: center;
       font-family: QwiglyRegular;
       font-weight: normal;
       color: #c65d5d;
-      text-shadow: 0.03em 0.03em white; }
+      text-shadow: 0.03em 0.03em #fff; }
     .left-section .logo-sidebar .logo-image {
       width: 100%; }
   .left-section .footer {
     text-align: center;
     font-family: sans-serif;
     font-size: 1.5vw;
-    color: white;
+    color: #fff;
     background-color: black;
     background-color: #777;
     border-radius: 7px;
-    border: 3px solid white;
+    border: 3px solid #fff;
     padding: 0 1.5vw 1.5vw 1.5vw; }
     .left-section .footer a {
       color: #a3c6ff;
@@ -102,7 +102,7 @@ a:hover {
   .right-section .article-container {
     background-color: #777;
     border-radius: 10px;
-    border: 3px solid white; }
+    border: 3px solid #fff; }
     .right-section .article-container article {
       font-family: LiberationSans, sans-serif;
       font-weight: normal;
@@ -110,7 +110,7 @@ a:hover {
       padding: 0em 0.5em 0.9em 0.5em;
       vertical-align: middle;
       margin: 0 2% 2% 2%;
-      color: white; }
+      color: #fff; }
       .right-section .article-container article .subarticle {
         padding-left: 0.5em;
         padding-right: 0.5em;
@@ -134,7 +134,7 @@ a:hover {
           padding-top: 0%; }
         .right-section .article-container article .subarticle img {
           border-style: solid;
-          border-color: white;
+          border-color: #fff;
           display: block;
           margin-left: auto;
           margin-right: auto;
@@ -143,7 +143,7 @@ a:hover {
         .right-section .article-container article .subarticle .hours-table {
           position: relative;
           text-align: center;
-          color: white; }
+          color: #fff; }
           .right-section .article-container article .subarticle .hours-table .marquee-title {
             width: 88%;
             font-family: sans-serif;
@@ -242,7 +242,7 @@ a:hover {
   text-align: center;
   padding: 0;
   margin: 0;
-  border: 3px solid white; }
+  border: 3px solid #fff; }
 
 .nav li {
   font-family: 'Oswald', sans-serif;
@@ -262,12 +262,12 @@ a:hover {
 
 .nav a.active {
   background-color: #a84f4f;
-  color: white;
+  color: #fff;
   cursor: default; }
 
 .nav ul {
   border-radius: 10px;
-  border: 3px solid white; }
+  border: 3px solid #fff; }
 
 .nav li {
   width: 120px;
