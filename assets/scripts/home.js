@@ -1,11 +1,21 @@
+// TODO: delete test_hours.json?
+
+// note: see the barbershop hours API for more information on types
 (function () {
-    const apiBaseUrl = "http://0.0.0.0:8080";
+    // constants
+    const apiBaseUrl = "http://192.241.140.179:8080";
     const weekdays = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
 
+    ////////////////////////////////////////////
+    // business hours fetching and population //
+    ////////////////////////////////////////////
+
+    // table name (i.e. element id) of a given hours set
     function tableName(name) {
         return name + "-hours";
     }
 
+    // (hours : Number, minutes : Number) -> "[h]h:mm"
     function timeStringOfHoursAndMinutes(hours, minutes) {
             if (hours > 12) {
                 hours = (hours - 12).toString();
@@ -19,6 +29,7 @@
             return hours + ":" + minutesString;
     }
 
+    // (hours : Object) -> <tr>...</tr>
     function tableRowOfGenericHours(hours) {
         var tableRow = $(document.createElement("tr"));
         var weekdayCell = $(document.createElement("td"));
@@ -41,6 +52,7 @@
         return tableRow;
     }
 
+    // (date : Date) -> e.g. "MON (12/1)"
     function weekdayDateStringOfDate(date) {
         var weekday = weekdays[date.getDay()];
         var month = (date.getMonth() + 1).toString();
@@ -49,6 +61,7 @@
         return weekday + " (" + month + "/" + day + ")";
     }
 
+    // (start_time : Object) -> <tr>...<td>CLOSED</td></tr>
     function closedTableRowOfDate(start_time) {
         var tableRow = $(document.createElement("tr"));
         var weekdayCell = $(document.createElement("td"));
@@ -63,6 +76,7 @@
         return tableRow;
     }
 
+    // (start_time : Object, end_time : Object) -> <tr>...</tr>
     function regularTableRowOfStartTimeAndEndTime(start_time, end_time) {
         var tableRow = $(document.createElement("tr"));
         var weekdayCell = $(document.createElement("td"));
@@ -81,6 +95,7 @@
         return tableRow;
     }
 
+    // (hours : Object) -> [<tr>...</tr>, ...]
     function tableRowsOfSpecificHours(hours) {
         var newTableRows = [];
 
@@ -104,6 +119,7 @@
         return newTableRows;
     }
 
+    // (name : string, json : Object) -> <div>...</div>
     function hoursTableOfJSON(name, json) {
         var newTableDiv = $(document.createElement("div"));
         newTableDiv.attr("align", "center");
@@ -138,6 +154,7 @@
         return newTableDiv;
     }
 
+    // (i : Number, name : string) -> ()
     function populateHoursByName(i, name) {
         var httpRequest = new XMLHttpRequest();
         httpRequest.onreadystatechange = function() {
@@ -151,6 +168,11 @@
         httpRequest.open('GET', apiBaseUrl + '/hours/findByName/' + name, true);
         httpRequest.send();
     }
+
+    /////////////////////////////////////////////
+    // busines hours creation and modification //
+    /////////////////////////////////////////////
+    // TODO
 
     window.onload = function () {
         // load hours data from the server
