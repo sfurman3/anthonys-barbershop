@@ -1,10 +1,8 @@
-// TODO: delete test_hours.json?
-
 // note: see the barbershop hours API for more information on types
 (function () {
     // constants
-    const apiBaseUrl = "http://192.241.140.179:8080";
-    const weekdays = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
+    var apiBaseUrl = "https://bigturtle.me";
+    var weekdays = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
 
     ////////////////////////////////////////////
     // business hours fetching and population //
@@ -172,7 +170,7 @@
     /////////////////////////////////////////////
     // busines hours creation and modification //
     /////////////////////////////////////////////
-    // TODO
+    // TODO: i.e. POST ...
 
     window.onload = function () {
         // load hours data from the server
@@ -188,5 +186,5 @@
         };
         httpRequest.open('GET', apiBaseUrl + '/hours/findActive', true);
         httpRequest.send();
-    }
+    };
 })();
